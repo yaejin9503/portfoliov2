@@ -129,6 +129,7 @@ h5 {
 }
 
 .career-menu-wrap li {
+  width: 100%;
   height: 58px;
   display: flex;
   align-items: center;
@@ -161,12 +162,16 @@ h5 {
   color: #d7cfcf;
 }
 
-.career-container-wrap .text {
+.career-container-wrap > div {
+  margin-top: 30px;
+}
+
+.career-container-wrap .main-text {
   font-weight: 400;
   font-size: 16px;
 }
 
-.career-container-wrap .text::before {
+.career-container-wrap .main-text::before {
   width: 8px;
   height: 7px;
   content: "";
@@ -176,12 +181,32 @@ h5 {
   display: inline-block;
 }
 
+.career-container-wrap .sub-text-wrap {
+  margin: 10px 0px 5px 10px;
+}
+
+.career-container-wrap .sub-text-wrap p {
+  margin: 5px 0px;
+}
+
+.career-container-wrap .sub-text-wrap p::before {
+  width: 5px;
+  height: 5px;
+  content: "";
+  background: #fff;
+  /* transform: rotate(90deg); */
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
 .tab-wrap {
   position: fixed;
   top: 200px;
   right: 120px;
   display: flex;
-  transition: all 1s;
+  transition: all 0.1s;
 }
 
 .tab-wrap ul {
@@ -190,7 +215,7 @@ h5 {
 .tab-wrap ul > li {
   color: #a9daff;
   line-height: 70px;
-  transition: all 1s;
+  cursor: pointer;
 }
 
 .tab-wrap .selected {
