@@ -18,14 +18,38 @@
           보완해야 할 부분을 찾는 것을 좋아합니다.
         </p>
         <div>
-          <button>resume</button>
+          <button>Resume</button>
         </div>
       </div>
     </section>
     <section class="second-step-wrap">
       <div class="second-container">
-        <h3>💻Where I’ve <span>Worked</span></h3>
-        <div></div>
+        <h3>💻Where I’ve <span class="font-color-blue">Worked</span></h3>
+        <div>
+          <ul class="career-menu-wrap">
+            <li class="selected">Jinhak</li>
+            <li>Buzz&Beyond</li>
+          </ul>
+          <div class="career-container">
+            <div>
+              <h3>웹 풀스택 개발 <span>@Jinhak</span></h3>
+              <span>2021.11~</span>
+            </div>
+            <div class="career-container-wrap">
+              <div>
+                <h5 class="text">
+                  기존에 운영되던 .NET 기반 서비스를 Nuxt.js, Express.js 기반
+                  프로젝트로 전환 및 코드 리팩토링 진행
+                </h5>
+                <p></p>
+              </div>
+              <div>
+                <h5></h5>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section></section>
