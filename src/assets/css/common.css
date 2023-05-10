@@ -125,37 +125,45 @@ h5 {
 .career-menu-wrap {
   width: 180px;
   padding-inline-start: 0px;
-  border-left: 1px solid grey;
+  /* border-left: 1px solid grey; */
 }
 
 .career-menu-wrap li {
-  width: 100%;
+  /* width: ; */
+  width: 165px;
   height: 58px;
   display: flex;
   align-items: center;
   padding-left: 15px;
   color: #bababa;
   cursor: pointer;
+  position: relative;
+  border-left: 1px solid #bababa;
 }
 
-.career-menu-wrap .selected {
+/* .career-menu-wrap li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  border-left: 1px solid #bababa;
+  height: 100%;
+} */
+
+.career-menu-wrap .selected,
+.career-menu-wrap li:hover {
   border-left: 2px solid #a9daff;
   background: #112240;
   font-weight: bold;
   color: #a9daff;
-}
-
-.career-menu-wrap li:hover {
-  background: #112240;
-  font-weight: bold;
-  color: #a9daff;
+  transition: all 0.1s;
 }
 
 .career-container {
   margin-left: 100px;
 }
 
-.career-container > div span {
+.career-container > .title .date {
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -206,7 +214,6 @@ h5 {
   top: 200px;
   right: 120px;
   display: flex;
-  transition: all 0.1s;
 }
 
 .tab-wrap ul {
@@ -239,7 +246,7 @@ h5 {
   right: 5px;
   left: -5px;
   border-radius: 10px;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .second-step-wrap {
@@ -249,7 +256,7 @@ h5 {
 
 .second-container {
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
 }
