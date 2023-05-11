@@ -93,7 +93,8 @@ h5 {
 
 .first-step-wrap,
 .second-step-wrap,
-.third-step-wrap {
+.third-step-wrap,
+.fourth-step-wrap {
   /* margin-left: 329px;
   margin-top: 180px; */
   /* font-weight: 400; */
@@ -310,4 +311,8 @@ h5 {
 .third-step .sub-contents-txt {
   font-size: var(--font-size-xsm);
   font-weight: 300;
+}
+
+.fourth-step.contents-container{
+  top: 20%;
 }

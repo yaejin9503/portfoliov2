@@ -71,11 +71,18 @@
     </section>
     <section class="third-step-wrap">
       <div class="third-step contents-container">
-        <h1 class="font-color-blue">📢Projects</h1>
+        <h1 class="font-color-blue">📢 Projects</h1>
         <Projects />
       </div>
     </section>
-    <section></section>
+    <section class="fourth-step-wrap">
+      <div class="fourth-step contents-container">
+         <h1 class="font-color-blue">Skills</h1>  
+         <div>
+           
+         </div>
+      </div>
+    </section>
     <div class="tab-wrap">
       <ul>
         <li
