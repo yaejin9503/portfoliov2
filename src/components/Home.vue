@@ -23,7 +23,7 @@
       </div>
     </section>
     <section class="second-step-wrap">
-      <div class="second-container">
+      <div class="second-step contents-container">
         <h3>💻Where I’ve <span class="font-color-blue">Worked</span></h3>
         <div>
           <ul class="career-menu-wrap">
@@ -69,7 +69,12 @@
         </div>
       </div>
     </section>
-    <section></section>
+    <section class="third-step-wrap">
+      <div class="third-step contents-container">
+        <h1 class="font-color-blue">📢Projects</h1>
+        <Projects />
+      </div>
+    </section>
     <section></section>
     <div class="tab-wrap">
       <ul>
@@ -107,11 +112,12 @@
 </template>
 <script>
 // import Introduce from "./Introduce.vue";
+import Projects from "./Projects.vue";
 
 export default {
   name: "App",
   components: {
-    // Introduce,
+    Projects,
   },
   data() {
     return {
@@ -171,7 +177,7 @@ export default {
         .scrollIntoView({ behavior: "smooth" });
       this.selectedMenu = menuNum;
       this.top =
-        menuNum === 1 ? 10 : menuNum === 2 ? 35 : menuNum === 3 ? 70 : 90;
+        menuNum === 1 ? 10 : menuNum === 2 ? 35 : menuNum === 3 ? 60 : 90;
     },
   },
 };
