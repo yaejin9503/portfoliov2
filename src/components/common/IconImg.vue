@@ -19,13 +19,6 @@ export default {
 };
 </script>
 <style scoped>
-.img-wrap {
-  width: 100px;
-  height: 100px;
-}
-.img-container {
-  margin: 0% 8%;
-}
 span {
   display: block;
   text-align: center;

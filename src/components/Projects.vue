@@ -13,7 +13,7 @@
             <div>
               <p class="sub-title">고등학생들을 위한 학습 성향 테스트사이트</p>
               <h3 class="title">진로 진단 검사</h3>
-              <p class="mt5">
+              <p class="sub-contents-txt mt5">
                 고등학생들을 위한 학습 성향을 진단하는 사이트로 프로젝트 구성,
                 구현, 배포까지 담당해서 진행했던 프로젝트 입니다. Nuxt.js로
                 구현하여, SSR 방식으로 동작하게끔 개발하였고, MiddleWare로
@@ -49,7 +49,7 @@
             <div>
               <p class="sub-title">고12 학생들을 위한 입시 정보 사이트</p>
               <h3 class="title">학생부 종합</h3>
-              <p class="mt5">
+              <p class="sub-contents-txt mt5">
                 고등학교 1,2학년 학생들을 상대로 입시 정보를 주는 사이트로
                 프로젝트 구성, 구현, 배포까지 담당해서 진행했던 프로젝트 입니다.
                 CI/CD 적용, 접속 log 처리 등 프로젝트의 전체적인 부분을
