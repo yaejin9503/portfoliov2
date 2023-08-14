@@ -82,6 +82,8 @@ h5 {
 }
 .container {
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .font-color-blue {
