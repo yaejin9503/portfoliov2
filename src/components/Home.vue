@@ -17,9 +17,9 @@
           구현했던 코드를 리팩토링 하며, <br />
           보완해야 할 부분을 찾는 것을 좋아합니다.
         </p>
-        <div>
-          <button>Resume</button>
-        </div>
+        <!-- <div>
+          <button >Resume</button>
+        </div> -->
       </div>
     </section>
     <section class="second-step-wrap">
