@@ -146,14 +146,25 @@ export default {
       top: 10,
     };
   },
+  mounted() {
+    document.addEventListener("scroll", this.scrollEvents);
+  },
+  unmounted() {
+    document.removeEventListener("scroll", this.scrollEvents);
+  },
   methods: {
     clickMenu(className, menuNum) {
       document
         .querySelector("." + className)
         .scrollIntoView({ behavior: "smooth" });
       this.selectedMenu = menuNum;
-      this.top =
-        menuNum === 1 ? 10 : menuNum === 2 ? 35 : menuNum === 3 ? 60 : 90;
+      // this.top =
+      //   menuNum === 1 ? 10 : menuNum === 2 ? 35 : menuNum === 3 ? 60 : 90;
+    },
+    scrollEvents() {
+      // this.top = document.scrollingElement.scrollTop / 10;
+      console.log(window.scrollY);
+      this.top = document.scrollingElement.scrollTop / 30;
     },
   },
 };
