@@ -1,13 +1,47 @@
-<template lang="">
+ <template lang="">
   <div class="container">
+   <div class="menu">
+     <ul>
+       <!--:class="top >=aboutTop && top < careerTop ? 'selected' : '' "-->
+       <li @click="clickMenu('first-step-wrap')">
+        <a href="javascript:void(0)">
+          <span>About</span>
+        </a>
+       </li>
+       <li @click="clickMenu('second-step-wrap')">
+        <a href="javascript:void(0)">
+          <span>Career</span>
+        </a>
+       </li>
+       <li @click="clickMenu('third-step-wrap')">
+        <a href="javascript:void(0)">
+          <span>Projects</span>
+        </a>
+       </li>
+       <li  @click="clickMenu('fourth-step-wrap')">
+        <a href="javascript:void(0)">
+          <span>Skills</span>
+        </a>
+       </li>
+     </ul>
+   </div>
+    <section> 
+      <section class="name-container">
+        <div id="title-1" class="title top">WEB<br/>DEVELPLER</div>
+        <div id="title-2" class="title bottom">KIMYEJIN</div>
+      </section>
+    </section>
     <section class="first-step-wrap">
       <div>
-        <p>안녕하세요🙌</p>
-        <p>
-          Front-end Developer<br />
-          <b class="font-color-blue">김예진</b> 입니다.
+        <p style="animation-delay: 0s;">안녕하세요🙌</p>
+        <p style="animation-delay: 1s;">
+          <span>Web Developer</span><br />
         </p>
-        <p class="mt5">
+        <p>
+          <span class="font-color-blue name-t"></span>
+          <span>입니다.</span>
+        </p>
+        <p class="mt5" style="animation-delay: 2s;">
           3년차 개발자로 스타트업과 자사 플랫폼을 운영하는 회사에서 웹서비스를
           개발/배포/운영 하였습니다.<br />
           2개의 프로젝트를 리드한 경험이 있어 개발의 한 사이클을 이해하고 개발할
@@ -17,9 +51,9 @@
           구현했던 코드를 리팩토링 하며, <br />
           보완해야 할 부분을 찾는 것을 좋아합니다.
         </p>
-        <!-- <div>
+        <div>
           <button >Resume</button>
-        </div> -->
+        </div>
       </div>
     </section>
     <section class="second-step-wrap">
@@ -93,7 +127,7 @@
         </div>
       </div>
     </section>
-    <div class="tab-wrap">
+    <div class="tab-wrap" style="display:none">
       <ul>
         <li
           :class="selectedMenu === 1 ? 'selected' : ''"
@@ -144,29 +178,161 @@ export default {
     return {
       selectedMenu: 1,
       top: 10,
+      aboutTop : 0, 
+      careerTop : 0, 
+      projectsTop : 0, 
+      skillsTop : 0 
     };
   },
   mounted() {
-    document.addEventListener("scroll", this.scrollEvents);
+    document.addEventListener("scroll", this.scrollEvents); 
+    this.show(); 
+    this.aboutTop = document.querySelector('.first-step-wrap').offsetTop;
+    this.careerTop =  document.querySelector('.second-step-wrap').offsetTop; 
+    this.projectsTop = document.querySelector('.third-step-wrap').offsetTop; 
+    this.skillsTop = document.querySelector('.fourth-step-wrap').offsetTop; 
+  
+    const $text = document.querySelector('.name-t'); 
+    const letters = ['김예진']; 
+    const speed = 150; // 속도 
+    let i = 0; // 현재 지정된 글자  
+
+
+    // 타이핑 효과
+    const typing = async () => {  
+      const letter = letters[i].split("");
+  
+      while (letter.length) {
+        await wait(speed);
+        $text.innerHTML += letter.shift(); 
+      }
+  
+      // 잠시 대기
+      await wait(800);
+  
+      // 지우는 효과
+      remove();
+    }
+
+  // 글자 지우는 효과
+    const remove = async () => {
+      const letter = letters[i].split("");
+    
+      while (letter.length) {
+        await wait(speed);
+        
+        letter.pop();
+        $text.innerHTML = letter.join(""); 
+      }
+      
+      // 다음 순서의 글자로 지정, 타이핑 함수 다시 실행
+      i = !letters[i+1] ? 0 : i + 1;
+      typing();
+    }
+
+    // 딜레이 기능 ( 마이크로초 )
+    function wait(ms) {
+      return new Promise(res => setTimeout(res, ms))
+    }
+
+    // 초기 실행
+    setTimeout(typing, 1500);
+  
   },
   unmounted() {
     document.removeEventListener("scroll", this.scrollEvents);
   },
   methods: {
-    clickMenu(className, menuNum) {
-      document
-        .querySelector("." + className)
-        .scrollIntoView({ behavior: "smooth" });
-      this.selectedMenu = menuNum;
-      // this.top =
-      //   menuNum === 1 ? 10 : menuNum === 2 ? 35 : menuNum === 3 ? 60 : 90;
+    show(){ 
+       document.getElementById('title-1').classList.add('title-animation');
+      setTimeout(function(){
+        document.getElementById('title-2').classList.add('title-animation');
+      },500)
     },
-    scrollEvents() {
-      // this.top = document.scrollingElement.scrollTop / 10;
-      // console.log(window.scrollY);
+    disappear(){ 
+      document.getElementById('title-1').classList.remove('title-animation');
+      setTimeout(function(){
+        document.getElementById('title-2').classList.remove('title-animation');
+      },500)
+    },
+    clickMenu(className) {
+      const areaTop = document.querySelector('.' + className).offsetTop; 
 
-      this.top = document.scrollingElement.scrollTop / 30;
+      window.scroll({ top : areaTop, behavior: "smooth" }); 
+      this.top = areaTop; 
+    },
+
+    scrollEvents() {
+      this.top = document.scrollingElement.scrollTop
+      if(this.top > 100) { 
+        this.disappear(); 
+      }else{ 
+        this.show();
+      }
+      
+      // const $firstP = document.querySelectorAll('.first-step-wrap p');
+
+      // if( this.aboutTop <= this.top){   
+      //   $firstP.forEach(item => { 
+      //     item.classList.add('animation-fadein'); 
+      //   })
+      //   // document.querySelectorAll('.first-step-wrap p').classList.add('animation-fadein')
+      // }else{ 
+      //    $firstP.forEach(item => { 
+      //     item.classList.remove('animation-fadein'); 
+      //   })
+      // }
     },
   },
 };
 </script>
+<style> 
+.name-container{ 
+  width: 100%;
+  padding: 0px 4.2rem;
+  box-sizing: border-box;
+  max-width: 144rem;
+  padding-top: 7rem;
+  position: relative;
+}
+
+.name-container .title{
+  font-family: 'Montserrat';
+  /* position: sticky; */
+  top: 0px;
+  font-size: 9.4rem;
+  font-weight: 900;
+  width: 100%;
+  line-height: 12.6rem;
+  letter-spacing: 0.12em;
+  white-space: pre-line;
+  transition: all 800ms cubic-bezier(.8, 0, .33, 1);
+  text-align: start;
+  transform: translateX(-1200px); 
+  /* animation: 0.5s ease 0s 1 normal none running; */
+}
+
+.name-container .title-animation {
+  transform: translateX(0px);
+}
+
+
+/* .name-container .title-animation2{
+  opacity: 0;
+  top: 10rem;
+  transition: all 1s ease 0s;
+ } */
+
+
+.name-container .title:nth-child(1){
+  /* text-align: end; */
+  -webkit-text-stroke: 0.1rem rgb(255, 255, 255);
+  color: transparent;
+  /* animation: 0.5s ease 0s 1 normal none running; */
+}
+
+
+
+
+
+</style>

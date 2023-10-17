@@ -4,6 +4,7 @@
   --font-size-md: 1.5rem;
   --font-size-sm: 1rem;
   --font-size-xsm: 0.75rem;
+  --color-background: #0a192f; 
 }
 
 @media (min-width: 1024px) {
@@ -26,6 +27,12 @@
   }
 }
 
+@keyframes cursor {
+  from { border-right: 2px solid #222; }
+  to { border-right: 2px solid #777; }
+}
+
+
 /* @media (min-width: 480px) {
   :root {
     --font-size-blg: 3.75rem;
@@ -36,6 +43,10 @@
   }
 } */
 
+html { 
+  /* font-size: 10px; */
+  font-size: 16px;
+}
 body {
   margin: 0px;
   /* width: 100%; */
@@ -113,20 +124,38 @@ section {
   font-weight: 700;
 }
 
+@keyframes fadein {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
 /* first-section start */
 .first-step-wrap p:first-child {
   font-size: var(--font-size-lg);
-  line-height: 46px;
+  line-height: 3rem;
 }
 
 .first-step-wrap p:nth-child(2) {
   font-size: var(--font-size-blg);
-  line-height: 70px;
+  line-height: 5rem;
 }
 
-.first-step-wrap p:nth-child(3) {
-  margin: 10px 0px;
+.first-step-wrap p:nth-child(3) span{
+  /* margin: 1rem 0rem; */
+  font-size: var(--font-size-lg);
+}
+
+.first-step-wrap p:nth-child(4) {
+  margin: 1rem 0rem;
   font-size: var(--font-size-xsm);
+}
+
+.first-step-wrap p.animation-fadein{ 
+  opacity: 1;
 }
 
 .first-step-wrap > div {
@@ -136,6 +165,74 @@ section {
   transform: translatex(-50%);
   top: 20%;
 }
+
+.name-t::after{ 
+  content: '';
+  margin-left: .4rem;
+  border-right: 2px solid #777;
+  animation: cursor .9s infinite steps(2);
+}
+
+.menu{ 
+  padding-right: 5%;
+  position: fixed;
+  top: 0; 
+  right: 0;
+  z-index: 999;
+  background: var(--color-background);
+  opacity: 0.85;
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.menu ul {
+  /* position: fixed; */
+  display: flex;
+  flex-direction: initial;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu ul > li { 
+  padding: 20px;
+} 
+
+.menu ul > li a { 
+  display: block;
+  color : #fff;
+  text-decoration: none;
+}
+
+.menu ul li a>span{ 
+  padding-bottom: 4px;
+  position: relative;
+}
+
+/* .menu ul > li a span.selected,  */
+/* .menu ul li:hover a span, 
+.menu ul li.selected a span{ 
+  color: #a9daff;
+  font-weight: bold;
+} */
+
+.menu ul li a span::before{
+  background-color: #a9daff;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: -2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease-out;
+}
+
+/* .menu ul li:hover a span::before, 
+.menu ul li.selected a span::before{
+  transform: scaleX(1);
+} */
+
 
 .tab-wrap {
   position: fixed;
@@ -222,6 +319,7 @@ section {
 
 .career-container-wrap .sub-text-wrap p {
   margin: 5px 0px;
+  font-size: 14px
 }
 
 .second-step.contents-container > div {
@@ -319,7 +417,7 @@ section {
 }
 
 .third-step .sub-contents-txt {
-  font-size: var(--font-size-xsm);
+  font-size: 13px;
   font-weight: 300;
 }
 

@@ -58,9 +58,11 @@ export default {
                 "기존에 운영되던 .NET 기반 서비스를 Nuxt.js, Express.js 기반 프로젝트로 전환 및 코드 리팩토링 진행",
               subContents: [
                 "초기 프로젝트 구성, 구현, 배포, 운영까지 2개의 프로젝트 리드",
-                "기존에 운영되던 서비스에서 불필요한 데이터 호출 제거 <br/>=> 사용자의 편의성 및 반응 속도 증대",
-                "기존 리눅스 서버 배포 방식에서 Docker로 기반으로 변경 ( 배포 자동화 적용 ) <br/> => 배포에 드는 시간적 비용 감소",
-                "초기 개발 시 CSR이였던 부분을 SSR 방식으로 변경 <br/> => 새로고침 시 깜빡거림 감소",
+                // "기존에 운영되던 서비스에서 불필요한 데이터 호출 제거 <br/>   &nbsp;&nbsp;<font style='color:#a9daff'>👉🏼 사용자의 편의성 및 반응 속도 증대 </font>",
+                "기존 리눅스 서버 배포 방식에서 Docker로 기반으로 변경(배포 자동화 적용) <br/> &nbsp;&nbsp;👉🏼  <font style='color:#a9daff'>배포에 드는 시간적 비용 감소</font>",
+                "초기 개발 시 CSR이였던 부분을 SSR 방식으로 변경 <br/>", // &nbsp;&nbsp;👉🏼 <font style='color:#a9daff'>새로고침 시 깜빡거림 감소</font>
+                "기존 사이트의 쿠키 정보로 동일하게 회원 처리 <br/> &nbsp;&nbsp;👉🏼<font style='color:#a9daff'>플랫폼 언어 전환시 개발 용이하도록 환경 설정 및 구현</font>", 
+                "RestAPI 설계 및 구현"
               ],
             },
             {
