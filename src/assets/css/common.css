@@ -435,8 +435,9 @@ section {
 
 .fourth-step.contents-wrap > div {
   width: 100%;
-  display: inline-flex;
+  display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .fourth-step > h3 {
@@ -449,7 +450,8 @@ section {
 }
 
 .img-container {
-  width: 100px;
+  width: 15%;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 1420px) {
@@ -498,7 +500,7 @@ section {
     width: 80%;
   }
   .img-container {
-    width: 70px;
+    width: 20%;
   }
   .img-container span {
     font-size: 13px;
@@ -601,11 +603,11 @@ section {
   }
 
   .img-container {
-    width: 50px;
+    width: 25%;
   }
 
   .img-wrap {
-    height: 50px;
+    height: 68px;
   }
 
   .fourth-step.contents-container {

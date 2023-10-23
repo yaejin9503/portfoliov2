@@ -99,10 +99,6 @@
               :src="'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png'"
               :title="'TypeScript'"
             />
-          </div>
-        </div>
-        <div class="fourth-step contents-wrap mt10">
-          <div>
             <IconImg
               :src="'https://upload.wikimedia.org/wikipedia/commons/a/a8/NestJS.svg'"
               :title="'NestJS'"
