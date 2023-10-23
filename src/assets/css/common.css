@@ -616,4 +616,24 @@ section {
   }
 }
 
+
+@media (max-width: 414px) {
+  .img-wrap{ 
+    height: 55px;
+  }
+}
+
+@media (max-width: 280px) {
+  .img-container{
+    margin-bottom: 2rem;
+  }
+
+  .img-wrap{ 
+    height: 45px;
+  }
+
+  .img-container span {
+    font-size: 10px;
+  }
+}
 /* first-section end */
