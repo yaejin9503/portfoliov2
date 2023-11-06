@@ -58,8 +58,9 @@ body {
   box-sizing: border-box;
 }
 
-p {
-  margin: 0px;
+p, ul{
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -116,6 +117,12 @@ h5 {
 section {
   min-height: 100vh;
   position: relative;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-title {
@@ -454,6 +461,52 @@ section {
   margin-bottom: 3rem;
 }
 
+.name-container{ 
+  width: 100%;
+  padding: 0px 4.2rem;
+  box-sizing: border-box;
+  /* max-width: 144rem; */
+  /* padding-top: 7rem; */
+  position: relative;
+ 
+}
+
+.name-container .title{
+  font-family: 'Montserrat';
+  top: 0px;
+  font-size: 9.4rem;
+  font-weight: 900;
+  width: 100%;
+  line-height: 12.6rem;
+  letter-spacing: 0.12em;
+  white-space: pre-line;
+  text-align: center;
+  /* animation: bling 1.0s ease-in-out 0s  infinite alternate none running; */
+}
+
+.name-container .title:nth-child(1){ 
+  animation: bling 1.0s ease-in-out 0s  infinite alternate none running;
+} 
+
+/* .name-container .title:nth-child(2){ 
+  animation: bling 1.0s ease-in-out 0s  infinite alternate-reverse none running;
+} */
+
+
+.name-container .title{
+  -webkit-text-stroke: 0.1rem rgb(255, 255, 255);
+}
+
+@keyframes bling { 
+  from { 
+    color : #fff; 
+  }
+  to { 
+    color: transparent; 
+  }
+}
+
+
 @media (max-width: 1420px) {
   .third-contents-wrap .sub-title {
     color: #d7cfcf;
@@ -507,6 +560,16 @@ section {
   }
   .img-wrap {
     height: 70px;
+  }
+
+  .name-container{ 
+    padding: 0 5rem ; 
+    /* max-width: 100rem; */
+    
+  }
+  .name-container .title{
+    font-size: 6.4rem; 
+    line-height: 8.0rem;
   }
 }
 
@@ -620,6 +683,22 @@ section {
 @media (max-width: 414px) {
   .img-wrap{ 
     height: 55px;
+  }
+
+  .name-container{ 
+    padding: 0 3rem; 
+    
+  }
+  .name-container .title{
+    font-size: 2.7rem; 
+    line-height: 4.5rem;
+  }
+
+  .menu{ 
+    padding-right:0 ;
+  }
+  .menu ul {
+    justify-content: center;
   }
 }
 

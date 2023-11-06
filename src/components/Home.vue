@@ -26,10 +26,10 @@
      </ul>
    </div>
     <section> 
-      <section class="name-container">
+      <div class="name-container">
         <div id="title-1" class="title top">WEB<br/>DEVELPLER</div>
         <div id="title-2" class="title bottom">KIMYEJIN</div>
-      </section>
+      </div>
     </section>
     <section class="first-step-wrap">
       <div>
@@ -181,8 +181,8 @@ export default {
     };
   },
   mounted() {
-    document.addEventListener("scroll", this.scrollEvents); 
-    this.show(); 
+    // document.addEventListener("scroll", this.scrollEvents); 
+    // this.show(); 
     this.aboutTop = document.querySelector('.first-step-wrap').offsetTop;
     this.careerTop =  document.querySelector('.second-step-wrap').offsetTop; 
     this.projectsTop = document.querySelector('.third-step-wrap').offsetTop; 
@@ -239,18 +239,6 @@ export default {
     document.removeEventListener("scroll", this.scrollEvents);
   },
   methods: {
-    show(){ 
-       document.getElementById('title-1').classList.add('title-animation');
-      setTimeout(function(){
-        document.getElementById('title-2').classList.add('title-animation');
-      },500)
-    },
-    disappear(){ 
-      document.getElementById('title-1').classList.remove('title-animation');
-      setTimeout(function(){
-        document.getElementById('title-2').classList.remove('title-animation');
-      },500)
-    },
     clickMenu(className) {
       const areaTop = document.querySelector('.' + className).offsetTop; 
 
@@ -258,77 +246,14 @@ export default {
       this.top = areaTop; 
     },
 
-    scrollEvents() {
-      this.top = document.scrollingElement.scrollTop
-      if(this.top > 100) { 
-        this.disappear(); 
-      }else{ 
-        this.show();
-      }
-      
-      // const $firstP = document.querySelectorAll('.first-step-wrap p');
-
-      // if( this.aboutTop <= this.top){   
-      //   $firstP.forEach(item => { 
-      //     item.classList.add('animation-fadein'); 
-      //   })
-      //   // document.querySelectorAll('.first-step-wrap p').classList.add('animation-fadein')
-      // }else{ 
-      //    $firstP.forEach(item => { 
-      //     item.classList.remove('animation-fadein'); 
-      //   })
-      // }
-    },
+    // scrollEvents() {
+    //   this.top = document.scrollingElement.scrollTop
+    //   if(this.top > 100) { 
+    //     this.disappear(); 
+    //   }else{ 
+    //     this.show();
+    //   }
+    // },
   },
 };
 </script>
-<style> 
-.name-container{ 
-  width: 100%;
-  padding: 0px 4.2rem;
-  box-sizing: border-box;
-  max-width: 144rem;
-  padding-top: 7rem;
-  position: relative;
-}
-
-.name-container .title{
-  font-family: 'Montserrat';
-  /* position: sticky; */
-  top: 0px;
-  font-size: 9.4rem;
-  font-weight: 900;
-  width: 100%;
-  line-height: 12.6rem;
-  letter-spacing: 0.12em;
-  white-space: pre-line;
-  transition: all 800ms cubic-bezier(.8, 0, .33, 1);
-  text-align: start;
-  transform: translateX(-1200px); 
-  /* animation: 0.5s ease 0s 1 normal none running; */
-}
-
-.name-container .title-animation {
-  transform: translateX(0px);
-}
-
-
-/* .name-container .title-animation2{
-  opacity: 0;
-  top: 10rem;
-  transition: all 1s ease 0s;
- } */
-
-
-.name-container .title:nth-child(1){
-  /* text-align: end; */
-  -webkit-text-stroke: 0.1rem rgb(255, 255, 255);
-  color: transparent;
-  /* animation: 0.5s ease 0s 1 normal none running; */
-}
-
-
-
-
-
-</style>
