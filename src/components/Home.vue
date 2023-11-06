@@ -185,6 +185,52 @@ export default {
   mounted() {
     // document.addEventListener("scroll", this.scrollEvents); 
     // this.show(); 
+
+    window.onload = function(){
+      const elm = document.querySelectorAll('section');
+      const elmCount = elm.length;
+      elm.forEach(function(item, index){
+        item.addEventListener('mousewheel', function(event){
+          event.preventDefault();
+          let delta = 0;
+
+          if (!event) event = window.event;
+          if (event.wheelDelta) {
+              delta = event.wheelDelta / 120;
+              if (window.opera) delta = -delta;
+          } 
+          else if (event.detail)
+              delta = -event.detail / 3;
+
+          let moveTop = window.scrollY;
+          let elmSelector = elm[index];
+
+          // wheel down : move to next section
+          if (delta < 0){
+            if (elmSelector !== elmCount-1){
+              try{
+                moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
+              // eslint-disable-next-line no-empty
+              }catch(e){}
+            }
+          }
+          // wheel up : move to previous section
+          else{
+            if (elmSelector !== 0){
+              try{
+                moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
+              // eslint-disable-next-line no-empty
+              }catch(e){}
+            }
+          }
+
+          // eslint-disable-next-line no-unused-vars
+          const body = document.querySelector('html');
+          window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
+        });
+      });
+    }
+    
     this.aboutTop = document.querySelector('.first-step-wrap').offsetTop;
     this.careerTop =  document.querySelector('.second-step-wrap').offsetTop; 
     this.projectsTop = document.querySelector('.third-step-wrap').offsetTop; 
