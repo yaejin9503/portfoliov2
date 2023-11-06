@@ -52,7 +52,9 @@
           보완해야 할 부분을 찾는 것을 좋아합니다.
         </p>
         <div>
-          <button >Resume</button>
+          <a class= "" href="https://ember-fontina-aa1.notion.site/3-e17710cf8a89419a8dbb0a8b49d28e84" target="_blank">
+            <button>Resume</button>
+          </a>
         </div>
       </div>
     </section>
